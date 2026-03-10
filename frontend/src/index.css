@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.gray.700') transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.700');
+    border-radius: 3px;
+  }
+}
+
+/* Prose overrides for dark mode chat */
+.prose-invert pre {
+  @apply bg-transparent p-0;
+}
+
+.prose-invert p {
+  @apply leading-relaxed my-1;
+}
+
+.prose-invert ul,
+.prose-invert ol {
+  @apply my-1;
+}
+
+.prose-invert li {
+  @apply my-0.5;
+}
+
+.prose-invert h1,
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4 {
+  @apply font-semibold text-gray-100 mt-3 mb-1;
+}
+
+.prose-invert table {
+  @apply border-collapse w-full;
+}
+
+.prose-invert th,
+.prose-invert td {
+  @apply border border-gray-600 px-3 py-1.5 text-sm;
+}
+
+.prose-invert th {
+  @apply bg-gray-700;
+}
+
+.prose-invert blockquote {
+  @apply border-l-4 border-gray-600 pl-3 italic text-gray-400;
+}
